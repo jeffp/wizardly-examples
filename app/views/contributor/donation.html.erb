@@ -1,0 +1,26 @@
+<h1>Donation</h1>
+
+
+<%= "<p style=\"color: green\">#{flash[:notice]}<p>" if flash[:notice] %>
+
+<% form_for :contributor_wizard, :url=>{:action=>:donation}  do |f| %>
+  <%= f.error_messages %>
+
+  
+  <p>
+    <%= f.label :monthly_pledge %><br />
+    <%= f.text_field :monthly_pledge %> dollars/month
+  </p>
+  
+  <p>
+    <%= f.label :total_amount %><br />
+    <%= f.text_field :total_amount %> dollars
+  </p>
+  <p>
+    <%= wizardly_submit %>
+  </p>
+<% end %>
+
+<script type='text/javascript'>
+  document.getElementById('contributor_wizard_monthly_pledge').focus()
+</script>

@@ -1,0 +1,40 @@
+== wizardly-examples
+
+Examples for jeffp-wizardly gem 
+
+http://github.com/jeffp/wizardly
+
+== Setup
+
+clone the directory
+
+	git clone git://github.com/jeffp/wizardly-examples.git
+	
+change to the directory and install the gems
+
+	rake gems:install
+	
+start the server
+	./script/server 
+	
+	
+== Examples
+
+=== Standard User Signup Wizard
+
+* CreateUsers
+* SignupController
+* UserSignup
+* User
+
+
+=== Wizard for STI Model
+
+* CreateContributors
+* ContributorController
+* ContributorWizard
+* Contributor
+* Donator
+* Volunteer
+
+

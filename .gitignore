@@ -1,0 +1,11 @@
+.DS_Store
+**/*.log
+pkg
+coverage
+doc
+log
+nbproject
+tmp
+vendor
+lib/tasks/*
+TODO.rdoc

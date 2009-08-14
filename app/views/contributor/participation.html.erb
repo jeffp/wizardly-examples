@@ -1,0 +1,26 @@
+<h1>Participation</h1>
+
+
+<%= "<p style=\"color: green\">#{flash[:notice]}<p>" if flash[:notice] %>
+
+<% form_for :contributor_wizard, :url=>{:action=>:participation}  do |f| %>
+  <%= f.error_messages %>
+
+  
+  <p>
+    <%= f.label :participation %><br />
+    <%= f.enum_select :participation %>
+  </p>
+  
+  <p>
+    <%= f.label :started %><br />
+    <%= f.date_select :started %>
+  </p>
+  <p>
+    <%= wizardly_submit %>
+  </p>
+<% end %>
+
+<script type='text/javascript'>
+  document.getElementById('contributor_wizard_participation').focus()
+</script>

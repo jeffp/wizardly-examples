@@ -1,0 +1,26 @@
+<h1>Volunteer</h1>
+
+
+<%= "<p style=\"color: green\">#{flash[:notice]}<p>" if flash[:notice] %>
+
+<% form_for :contributor_wizard, :url=>{:action=>:volunteer}  do |f| %>
+  <%= f.error_messages %>
+
+  
+  <p>
+    <%= f.label :montly_pledge %><br />
+    <%= f.text_field :montly_pledge %>
+  </p>
+  
+  <p>
+    <%= f.label :total_hours %><br />
+    <%= f.text_field :total_hours %>
+  </p>
+  <p>
+    <%= wizardly_submit %>
+  </p>
+<% end %>
+
+<script type='text/javascript'>
+  document.getElementById('contributor_wizard_montly_pledge').focus()
+</script>
