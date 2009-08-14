@@ -27,6 +27,13 @@ start the server
 * UserSignup
 * User
 
+This example creates a User record from a wizard in three steps.  The steps are
+defined by 'validation_group' macros on the UserSignup model (which inherits from
+the User class).  All validation is defined in the User class.
+
+The SignupController class acts wizardly for UserSignup.  In addition, it defines
+four callback macros for additional processing in the wizard flow.  
+
 
 === Wizard for STI Model
 
@@ -37,4 +44,21 @@ start the server
 * Donator
 * Volunteer
 
+This example demonstrates how wizardly is used to generate a wizard with two different
+paths for an STI model.  The base model is the Contributor class and both Volunteer
+and Donator inherit from the Contributor class.  To handle the wizard for the STI model, 
+a fourth class, ContributorWizard, subclasses the Contributor class and defines the 
+validation groups.  It also sets the STI inheritance_column to a non-existant column so
+that the wizard can dictate the final model based on user input.  
+
+The ConntributorController acts wizardly for the ContributorWizard model, and defines
+two routes to completion depending on whether the user chooses :volunteer or :donator
+in the :participation page.  Callback macros on_next(:participation) and on_next(:donation)
+are used to control the progression path of the wizard based on user choice.  Note the 
+progression is only managed going forward because the wizardly gem manages the correct
+backward progression (from :back buttons) based on previous forward progression.
+
+The on_finish(:finish) callback macro is called when the user finished the final page and 
+clicks the :finish button.  It sets the :type column for the STI model before the 
+record is created.
 
