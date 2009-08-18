@@ -8,14 +8,21 @@ http://github.com/jeffp/wizardly
 
 clone the directory
 
-	git clone git://github.com/jeffp/wizardly-examples.git
+  git clone git://github.com/jeffp/wizardly-examples.git
 	
 change to the directory and install the gems
 
-	rake gems:install
+  rake gems:install
+
+build the database.  The examples currently use Sqlite3 (you'll need it installed or
+change the database to your preference)
+
+  rake db:create
+  rake db:migrate
 	
 start the server
-	./script/server 
+
+  ./script/server 
 	
 	
 == Examples

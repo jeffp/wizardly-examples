@@ -17,3 +17,4 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.options << '--line-numbers' << '--inline-source'
   rdoc.rdoc_files.include('README.rdoc', 'LICENSE', 'app/**/*.rb', 'db/migrate/**/*.rb')
 end
+
