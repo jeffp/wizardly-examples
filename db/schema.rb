@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090818202815) do
+ActiveRecord::Schema.define(:version => 20090819015353) do
 
   create_table "contributors", :force => true do |t|
     t.string   "first_name"
@@ -22,6 +22,20 @@ ActiveRecord::Schema.define(:version => 20090818202815) do
     t.decimal  "total_hours",    :precision => 8, :scale => 2
     t.string   "email"
     t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "polls", :force => true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.string   "gender"
+    t.string   "q1"
+    t.string   "q2"
+    t.string   "q3"
+    t.string   "q4"
+    t.string   "phone"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

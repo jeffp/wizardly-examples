@@ -1,0 +1,26 @@
+<h1>Contact</h1>
+
+
+<%= "<p style=\"color: green\">#{flash[:notice]}<p>" if flash[:notice] %>
+
+<% form_for :poll, :url=>{:action=>:contact}  do |f| %>
+  <%= f.error_messages %>
+
+  
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= wizardly_image_submit %>
+  </p>
+<% end %>
+
+<script type='text/javascript'>
+  document.getElementById('poll_phone').focus()
+</script>

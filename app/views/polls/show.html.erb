@@ -1,0 +1,48 @@
+<p>
+  <b>Name:</b>
+  <%=h @poll.name %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%=h @poll.age %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%=h @poll.gender %>
+</p>
+
+<p>
+  <b>Q1:</b>
+  <%=h @poll.q1 %>
+</p>
+
+<p>
+  <b>Q2:</b>
+  <%=h @poll.q2 %>
+</p>
+
+<p>
+  <b>Q3:</b>
+  <%=h @poll.q3 %>
+</p>
+
+<p>
+  <b>Q4:</b>
+  <%=h @poll.q4 %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @poll.phone %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @poll.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_poll_path(@poll) %> |
+<%= link_to 'Back', polls_path %>

@@ -1,0 +1,31 @@
+<h1>Info</h1>
+
+
+<%= "<p style=\"color: green\">#{flash[:notice]}<p>" if flash[:notice] %>
+
+<% form_for :poll, :url=>{:action=>:info}  do |f| %>
+  <%= f.error_messages %>
+
+  
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  
+  <p>
+    <%= f.label :age %><br />
+    <%= f.text_field :age %>
+  </p>
+  
+  <p>
+    <%= f.label :gender %><br />
+    <%= f.enum_select :gender %>
+  </p>
+  <p>
+    <%= wizardly_image_submit %>
+  </p>
+<% end %>
+
+<script type='text/javascript'>
+  document.getElementById('poll_name').focus()
+</script>

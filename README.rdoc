@@ -69,3 +69,17 @@ The on_finish(:finish) callback macro is called when the user finished the final
 clicks the :finish button.  It sets the :type column for the STI model before the 
 record is created.
 
+=== Wizard for Resource and Image_submit tags
+
+* CreatePolls
+* PollsController
+* PollWizardController
+* Polls
+
+This example demonstrates how to replace a resource's new form with a wizard.  When
+'new poll' is clicked on th resource's index page, PollWizard controller is called.
+The PollsWizradController uses the wizard's global on_completed callback macro to
+redirect to the resource controller once the resource has been committed to the database.
+
+This example also demonstrates the wizardly_image_submit helper.
+

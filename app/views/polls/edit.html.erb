@@ -1,0 +1,48 @@
+<h1>Editing poll</h1>
+
+<% form_for(@poll) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :age %><br />
+    <%= f.text_field :age %>
+  </p>
+  <p>
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender %>
+  </p>
+  <p>
+    <%= f.label :q1 %><br />
+    <%= f.text_field :q1 %>
+  </p>
+  <p>
+    <%= f.label :q2 %><br />
+    <%= f.text_field :q2 %>
+  </p>
+  <p>
+    <%= f.label :q3 %><br />
+    <%= f.text_field :q3 %>
+  </p>
+  <p>
+    <%= f.label :q4 %><br />
+    <%= f.text_field :q4 %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @poll %> |
+<%= link_to 'Back', polls_path %>

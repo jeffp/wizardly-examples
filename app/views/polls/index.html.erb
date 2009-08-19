@@ -1,0 +1,36 @@
+<h1>Listing polls</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Q1</th>
+    <th>Q2</th>
+    <th>Q3</th>
+    <th>Q4</th>
+    <th>Phone</th>
+    <th>Email</th>
+  </tr>
+
+<% @polls.each do |poll| %>
+  <tr>
+    <td><%=h poll.name %></td>
+    <td><%=h poll.age %></td>
+    <td><%=h poll.gender %></td>
+    <td><%=h poll.q1 %></td>
+    <td><%=h poll.q2 %></td>
+    <td><%=h poll.q3 %></td>
+    <td><%=h poll.q4 %></td>
+    <td><%=h poll.phone %></td>
+    <td><%=h poll.email %></td>
+    <td><%= link_to 'Show', poll %></td>
+    <td><%= link_to 'Edit', edit_poll_path(poll) %></td>
+    <td><%= link_to 'Destroy', poll, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New poll', '/poll_wizard' %>

@@ -1,0 +1,21 @@
+<h1>Question 1</h1>
+
+
+<%= "<p style=\"color: green\">#{flash[:notice]}<p>" if flash[:notice] %>
+
+<% form_for :poll, :url=>{:action=>:question_1}  do |f| %>
+  <%= f.error_messages %>
+
+  
+  <p>
+    <%= f.label 'Would you be interested in contributing to an environmental cause?' %><br />
+    <%= f.enum_select :q1 %>
+  </p>
+  <p>
+    <%= wizardly_image_submit %>
+  </p>
+<% end %>
+
+<script type='text/javascript'>
+  document.getElementById('poll_q1').focus()
+</script>
