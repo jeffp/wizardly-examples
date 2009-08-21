@@ -1,0 +1,26 @@
+<h1>Contact</h1>
+
+
+<%= "<p style=\"color: green\">#{flash[:notice]}<p>" if flash[:notice] %>
+
+<% form_for :user_signup_in3_pages, :url=>{:action=>:contact}  do |f| %>
+  <%= f.error_messages %>
+
+  
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  
+  <p>
+    <%= f.label :mobile %><br />
+    <%= f.text_field :mobile %>
+  </p>
+  <p>
+    <%= wizardly_submit %>
+  </p>
+<% end %>
+
+<script type='text/javascript'>
+  document.getElementById('user_signup_in3_pages_email').focus()
+</script>

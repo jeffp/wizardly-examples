@@ -1,0 +1,36 @@
+<h1>Info</h1>
+
+
+<%= "<p style=\"color: green\">#{flash[:notice]}<p>" if flash[:notice] %>
+
+<% form_for :user_signup_in3_pages, :url=>{:action=>:info}  do |f| %>
+  <%= f.error_messages %>
+
+  
+  <p>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </p>
+  
+  <p>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </p>
+  
+  <p>
+    <%= f.label :degree %><br />
+    <%= f.enum_select :degree %>
+  </p>
+  
+  <p>
+    <%= f.label :status %><br />
+    <%= f.enum_select :status %>
+  </p>
+  <p>
+    <%= wizardly_submit %>
+  </p>
+<% end %>
+
+<script type='text/javascript'>
+  document.getElementById('user_signup_in3_pages_first_name').focus()
+</script>

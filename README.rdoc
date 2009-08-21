@@ -83,3 +83,6 @@ redirect to the resource controller once the resource has been committed to the 
 
 This example also demonstrates the wizardly_image_submit helper.
 
+=== Wizard with User Defined Buttons
+
+This example demonstrates customizing the five default buttons and adding a custom button
