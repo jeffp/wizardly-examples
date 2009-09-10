@@ -1,0 +1,33 @@
+<h1>Name</h1>
+
+
+<%= "<p style=\"color: green\">#{flash[:notice]}<p>" if flash[:notice] %>
+
+<% form_for :paperclip_user, :url=>{:action=>:name}, :html=>{:multipart=>true}  do |f| %>
+  <%= f.error_messages %>
+
+  
+  <p>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </p>
+  
+  <p>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </p>
+  
+  <p>
+    <%= f.label :avatar %><br />
+    <%= image_tag(@paperclip_user.avatar.url, :alt=>'') unless @paperclip_user.avatar.url.blank? %>
+    <%= content_tag('br') unless @paperclip_user.avatar.url.blank? %>
+    <%= f.file_field :avatar %><br/>
+  </p>
+  <p>
+    <%= wizardly_submit %>
+  </p>
+<% end %>
+
+<script type='text/javascript'>
+  document.getElementById('paperclip_user_first_name').focus()
+</script>

@@ -1,0 +1,26 @@
+<h1>Info</h1>
+
+
+<%= "<p style=\"color: green\">#{flash[:notice]}<p>" if flash[:notice] %>
+
+<% form_for :paperclip_user, :url=>{:action=>:info}  do |f| %>
+  <%= f.error_messages %>
+
+  
+  <p>
+    <%= f.label :degree %><br />
+    <%= f.enum_select :degree %>
+  </p>
+  
+  <p>
+    <%= f.label :status %><br />
+    <%= f.enum_select :status %>
+  </p>
+  <p>
+    <%= wizardly_submit %>
+  </p>
+<% end %>
+
+<script type='text/javascript'>
+  document.getElementById('paperclip_user_degree').focus()
+</script>

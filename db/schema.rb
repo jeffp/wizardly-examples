@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090819015353) do
+ActiveRecord::Schema.define(:version => 20090910044227) do
 
   create_table "contributors", :force => true do |t|
     t.string   "first_name"
@@ -22,6 +22,22 @@ ActiveRecord::Schema.define(:version => 20090819015353) do
     t.decimal  "total_hours",    :precision => 8, :scale => 2
     t.string   "email"
     t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "paperclip_users", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "mobile"
+    t.string   "degree"
+    t.string   "status"
+    t.string   "username"
+    t.string   "password"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
